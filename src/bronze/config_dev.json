@@ -1,0 +1,11 @@
+{
+  "catalog": "workspace",
+  "schema": "telemetry",
+  "xml_path": "/Volumes/workspace/telemetry/v2/PrinterRawData.xml",
+  "row_tag": "PrinterTelemetry",
+  "tables": {
+    "bronze_device": "bronze_device",
+    "bronze_usage": "bronze_usage",
+    "bronze_events": "bronze_events"
+  }
+}

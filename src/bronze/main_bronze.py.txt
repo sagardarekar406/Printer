@@ -1,0 +1,20 @@
+import argparse
+from src.utils.spark_session import get_spark
+from src.config.config_loader import load_config
+from src.bronze.bronze_pipeline import BronzePipeline
+
+
+def main():
+    parser = argparse.ArgumentParser(description="Bronze Pipeline Runner")
+    parser.add_argument("--config", required=True, help="Path to config file")
+    args = parser.parse_args()
+
+    config = load_config(args.config)
+    spark = get_spark()
+
+    pipeline = BronzePipeline(spark, config)
+    pipeline.run()
+
+
+if __name__ == "__main__":
+    main()
