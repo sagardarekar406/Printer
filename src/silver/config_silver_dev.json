@@ -1,0 +1,12 @@
+{
+  "catalog": "workspace",
+  "schema": "telemetry",
+  "bronze_table": "bronze_printer_telemetry",
+  "silver_tables": {
+    "devices": "silver_devices",
+    "usage": "silver_usage",
+    "supplies": "silver_supplies",
+    "errors": "silver_errors",
+    "maintenance": "silver_maintenance"
+  }
+}

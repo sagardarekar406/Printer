@@ -1,0 +1,20 @@
+import argparse
+from src.utils.spark_session import get_spark
+from src.config.config_loader import load_config
+from src.silver.silver_pipeline import SilverPipeline
+
+
+def main():
+    parser = argparse.ArgumentParser(description="Silver Pipeline Runner")
+    parser.add_argument("--config", required=True, help="Path to config file")
+    args = parser.parse_args()
+
+    config = load_config(args.config)
+    spark = get_spark()
+
+    pipeline = SilverPipeline(spark, config)
+    pipeline.run()
+
+
+if __name__ == "__main__":
+    main()
